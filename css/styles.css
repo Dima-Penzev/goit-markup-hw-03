@@ -8,6 +8,8 @@
     --color-bright-blue: #2196f3;
     --color-white: #ffffff;
     --color-dark-blue: #2f303a;
+    --color-social-icons: #afb1b8;
+    --color-basement-icons: rgba(255, 255, 255, 0.1);
 
     --team-background-color: var(--color-first-bright-grey);
     --portfolio-border-color: var(--color-second-bright-grey);
@@ -24,6 +26,7 @@
         0px 2px 1px rgba(0, 0, 0, 0.2);
     --portfolio-filter-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
+    --overlay: rgba(47, 48, 58, 0.4);
 }
 
 body {
@@ -31,7 +34,7 @@ body {
     font-style: normal;
 }
 
-/* head */
+/*===head===*/
 
 .container {
     width: 1200px;
@@ -117,7 +120,8 @@ body {
 .contact {
     list-style: none;
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
 
@@ -138,7 +142,33 @@ body {
     border-bottom: 1px solid var(--header-underline-color);
 }
 
-/*hero*/
+.mail {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+
+    fill: var(--primary-text-color);
+}
+
+.phone {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+
+    fill: var(--primary-text-color);
+}
+
+.contact:hover .mail,
+.contact:focus .mail {
+    fill: var(--accent-color);
+}
+
+.contact:hover .phone,
+.contact:focus .phone {
+    fill: var(--accent-color);
+}
+
+/*===hero===*/
 
 .main-title {
     width: 700px;
@@ -174,6 +204,14 @@ body {
 
 .hero-item {
     background-color: var(--main-background-color);
+    background-image: linear-gradient(to right, var(--overlay), var(--overlay)),
+        url(../images/hero-back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 1600px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .hero-item .container {
@@ -184,7 +222,7 @@ body {
     text-align: center;
 }
 
-/*features*/
+/*===features===*/
 
 .invisible {
     display: none;
@@ -196,6 +234,18 @@ body {
     display: flex;
     justify-content: space-between;
     list-style: none;
+}
+
+.features-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    height: 120px;
+    margin-bottom: 30px;
+
+    background: var(--team-background-color);
+    border-radius: 4px;
 }
 
 .features-title {
@@ -223,7 +273,7 @@ body {
     color: var(--primary-text-color);
 }
 
-/*actions*/
+/*===actions===*/
 
 .actions-title {
     margin: 0;
@@ -247,7 +297,7 @@ body {
     list-style: none;
 }
 
-/*team*/
+/*===team===*/
 
 .team-section {
     background-color: var(--team-background-color);
@@ -300,7 +350,7 @@ body {
 
 .skill {
     margin: 0;
-    padding-bottom: 30px;
+    padding-bottom: 16px;
 
     font-weight: 400;
     font-size: 16px;
@@ -311,10 +361,47 @@ body {
     color: var(--primary-text-color);
 }
 
-/*basement*/
+.social-container {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0 30px 32px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+.social-link:hover,
+.social-link:focus {
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.social-icon {
+    height: 20px;
+
+    fill: var(--color-social-icons);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+    fill: var(--main-title-color);
+}
+
+/*===basement===*/
 
 .basement-item {
     background-color: var(--main-background-color);
+}
+
+.basement-item .container {
+    display: flex;
 }
 
 .basement-logo {
@@ -365,7 +452,55 @@ body {
     margin-bottom: 9px;
 }
 
-/*portfolio*/
+.invocation-box {
+    padding-top: 72px;
+    margin-left: 70px;
+}
+
+.invocation {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: var(--main-title-color);
+}
+
+.social-box {
+    display: flex;
+}
+
+.basement-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    background-color: var(--color-basement-icons);
+}
+
+.basement-link:hover {
+    background-color: var(--accent-color);
+}
+
+.basement-link:not(:last-child) {
+    margin-right: 10px;
+}
+
+.basement-icon {
+    height: 20px;
+
+    fill: var(--main-title-color);
+}
+
+/*===portfolio===*/
 
 .buttons-list {
     display: flex;
